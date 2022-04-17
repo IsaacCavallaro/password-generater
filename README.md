@@ -6,5 +6,5 @@
 - Display password options
 
 Bonus: 
-- Ability to set the passowrd length
+- Ability to set the password length
 - One click copy link to clipboard
