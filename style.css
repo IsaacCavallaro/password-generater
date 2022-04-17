@@ -15,28 +15,6 @@ html, body {
   align-items: center;
 }
 
-header {
-  border-bottom: 1px solid blue;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Generate a Random Password text */
-h1 {
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 30px;
-  line-height: 40px;
-}
-
-/* Never use an isecure password again text */
-p {
-  font-family: 'Inter', sans-serif;
-}
-
 /* Container for all content for differing background */
 .content-container {
   border: 1px solid yellow;
@@ -51,27 +29,51 @@ p {
 /* Wrapper for all content to center within container */
 .content-wrapper {
   border: 1px solid red;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   width: 80%;
   height: 90%;
 }
 
+/* =========== HEADER ============== */
+
+header {
+  border-bottom: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Generate a Random Password text */
+h1 {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 40px;
+}
+
+/* Color for "Random Password"  Heading */
 .rdm-pwd-text {
   color:#0369A1;
 }
 
-/* .generate-pwd-wrapper {
-  border-bottom: 1px solid black;
-} */
+/* Never use an isecure password again text */
+p {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+/* =========== PASSWORD GENERATOR BUTTON ============== */
 
 /* generate password button */
 #generate {
+  width: 50%;
   color: #fff;
   background-color: #0369A1;
-}
-
-footer {
-  border-top: 1px solid #2F3E53;
+  font-size: .75em;
 }
 
 .generate-password-wrapper {
@@ -85,5 +87,56 @@ button {
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
   border-radius: 6px;
   font-weight: 500;
-  font-size: 14px;
+}
+
+/* =========== FOOTER ============== */
+
+/* footer container */
+footer {
+  /* border-top: 1px solid #2F3E53; */
+  border: 1px solid orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* footer content wrapper */
+.footer-wrapper {
+ border: 1px solid green;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ height: 80%;
+ width: 80%;
+}
+
+/* Top 2 buttons wrapper */
+.top-btns {
+  border: 1px solid red;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Bottom 2 buttons wrapper */
+.btm-btns {
+  border: 1px solid yellow;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Password result buttons */
+.pwd-result {
+ width: 80%;
+ margin: 2%;
 }
