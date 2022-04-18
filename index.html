@@ -6,9 +6,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Password Generater</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Karla&display=swap" rel="stylesheet">
 </head>
 <body>
+ <div class="content-container">
+   <div class="content-wrapper">
+      <header>
+        <h1>Generate a <span class="rdm-pwd-text">Random Password</span></h1>
+        <p>Never use an insecure password again</p>
+      </header>
+
+      <section class="generate-password-wrapper">
+        <button id="generate" onclick="generateBtn()">Generate Passwords</button>
+      </section>
+        
+      <footer>
+        <div class="footer-wrapper">
+          <div class="top-btns">
+            <button class ="pwd-result" id="pwd-result-one">...</button>
+            <button class ="pwd-result" id="pwd-result-two">...</button>
+          </div>
+          <div class="btm-btns">
+            <button class ="pwd-result" id="pwd-result-three">...</button>
+            <button class ="pwd-result" id="pwd-result-four">...</button>
+          </div>
+        </div>
+      </footer>
+    <script src="main.js"></script>
+  </div>
+</div>
     
-  <script src="main.js"></script>
 </body>
 </html>
