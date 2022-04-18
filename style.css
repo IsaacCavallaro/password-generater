@@ -138,5 +138,13 @@ footer {
 /* Password result buttons */
 .pwd-result {
  width: 80%;
+ height: 20%;
+ padding: 0;
  margin: 2%;
+ background-color: #273549;
+ border: none;
+ display: flex;
+ font-size: 100%;
+ justify-content: center;
+ align-items: center;
 }
