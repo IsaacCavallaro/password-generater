@@ -12,13 +12,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Karla&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/7fc26ab070.js" crossorigin="anonymous"></script>
 </head>
 <body>
  <div class="content-container">
    <div class="content-wrapper">
       <header>
         <h1>Generate a <span class="rdm-pwd-text">Random Password</span></h1>
-        <p>Never use an insecure password again</p>
+        <p class="sub-title">Never use an insecure password again</p>
       </header>
 
       <section class="password-length-wrapper" id="password-length-wrapper">
@@ -33,18 +34,25 @@
       <footer>
         <div class="footer-wrapper">
           <div class="top-btns">
-            <button class ="pwd-result" id="pwd-result-one">...</button>
-            <button class="btn-copy" id="btn-copy-one">Copy</button>
-
-            <button class ="pwd-result" id="pwd-result-two">...</button>
-            <button class="btn-copy" id="btn-copy-two">Copy</button>
+            <div class="btn-and-copy-wrapper">
+              <button class ="pwd-result" id="pwd-result-one">...</button>
+              <button class="btn-copy" id="btn-copy-one"><i class="fa-solid fa-paste"></i></button>
+            </div>
+            <div class="btn-and-copy-wrapper">
+              <button class ="pwd-result" id="pwd-result-two">...</button>
+              <button class="btn-copy" id="btn-copy-two"><i class="fa-solid fa-paste"></i></button>
+            </div>
           </div>
           <div class="btm-btns">
-            <button class ="pwd-result" id="pwd-result-three">...</button>
-            <button class="btn-copy" id="btn-copy-three">Copy</button>
+            <div class="btn-and-copy-wrapper">
+              <button class ="pwd-result" id="pwd-result-three">...</button>
+              <button class="btn-copy" id="btn-copy-three"><i class="fa-solid fa-paste"></i></button>
+            </div>
 
-            <button class ="pwd-result" id="pwd-result-four">...</button>
-            <button class="btn-copy" id="btn-copy-four">Copy</button>
+            <div class="btn-and-copy-wrapper">
+              <button class ="pwd-result" id="pwd-result-four">...</button>
+              <button class="btn-copy" id="btn-copy-four"><i class="fa-solid fa-paste"></i></button>
+            </div>
           </div>
         </div>
       </footer>

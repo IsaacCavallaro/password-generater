@@ -26,7 +26,7 @@ function inputListener() {
 function updateUnitValues() {
 
   // Remove error message if it is already displayed
-  if (errorMessage.textContent === "Maximum length is 15 characters" || errorMessage.textContent === "Minimum length is 8 characters"){
+  if (errorMessage.textContent === "Maximum 15 characters" || errorMessage.textContent === "Minimum 8 characters"){
     errorMessage.remove();
   }
   
@@ -42,12 +42,18 @@ function generateBtn() {
 
   // Check if the input is bigger than 15 characters
   if (input > 15) {
-    errorMessage.textContent = "Maximum length is 15 characters";
+    errorMessage.textContent = "Maximum 15 characters";
+    errorMessage.style.marginTop = "2px"
+    errorMessage.style.marginBottom = "0px";
+    errorMessage.style.fontSize = "10px";
     document.getElementById("password-length-wrapper").appendChild(errorMessage);
   }
   // Check if the input is less than 1 character
   else if (input < 8) {
-    errorMessage.textContent = "Minimum length is 8 characters";
+    errorMessage.textContent = "Minimum 8 characters";
+    errorMessage.style.marginTop = "2px"
+    errorMessage.style.marginBottom = "0px";
+    errorMessage.style.fontSize = "10px";
     document.getElementById("password-length-wrapper").appendChild(errorMessage);
   }
   // If the input is between 1 and 15 characters long
