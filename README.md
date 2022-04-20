@@ -1,10 +1,35 @@
 # passwordgenerater
 
-## Requirements 
-- Array to hold all possible characters (includes lowcase, uppercase, numbers and symbols)
-- Button to generate 4 random password options
-- Display password options
+## Link to Deployed Site
 
-Bonus: 
-- Ability to set the password length
-- One click copy link to clipboard
+
+---
+## Description
+
+Web app that generates four unique passwords.
+
+---
+
+## Features
+
+- Allows for user input to determine the length of the password.
+- Displays simple message if the length if too short or too long.
+- One click copy password to clipboard.
+
+---
+
+## Screenshots
+
+![screenshot](assets/example1.png)
+
+---
+
+![screenshot](assets/example2.png)
+
+---
+
+![screenshot](assets/example3.png)
+
+---
+
+![screenshot](assets/example4.png)
