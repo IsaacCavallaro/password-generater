@@ -1,4 +1,4 @@
-// One click copy link to clipboard
+// Responsive styling
 
 let allChars = []; // Initialize allChars to empty array to hold all potential password characters (UTF-16 code units)
 let allPasswords = []; // Initialize allPasswords array to hold a list of 4 differing passwords
@@ -6,6 +6,8 @@ let password;
 let errorMessage = document.createElement("p"); // Create a paragraph to display error message to user
 let inputField = document.getElementById("input") // Select input field and store in inputField
 let input = document.getElementById("input").value // Select the value of the input field and store in input
+let copyButton = document.getElementsByClassName('btn-copy'); // Select all copy buttons with the class 'btn-copy' (NodeList)
+let copiedPassword; // Initialize copiedPassword to global variable which will be used to copy the password to clipboard
 
 ////////////////////////////  ADDING ALL CHARACTERS TO ALLCHARS ARRAY  ///////////////////////////////////
 
@@ -24,7 +26,7 @@ function inputListener() {
 function updateUnitValues() {
 
   // Remove error message if it is already displayed
-  if (errorMessage.textContent === "Maximum length is 15 characters" || errorMessage.textContent === "Minimum length is 8 characters"){
+  if (errorMessage.textContent === "Maximum 15 characters" || errorMessage.textContent === "Minimum 8 characters"){
     errorMessage.remove();
   }
   
@@ -33,7 +35,6 @@ function updateUnitValues() {
   document.getElementById("input").value = inputNumOnly // Set the id="input" to equal inputNumOnly 
 }
 
-
 ////////////////////////////  GENERATE PASSWORDS BUTTON  ///////////////////////////////////
 
 // Invoke generateBtn when "generate passwords" is clicked
@@ -41,12 +42,14 @@ function generateBtn() {
 
   // Check if the input is bigger than 15 characters
   if (input > 15) {
-    errorMessage.textContent = "Maximum length is 15 characters";
+    errorMessage.textContent = "Maximum 15 characters";
+    errorMessage.setAttribute("class", "error");
     document.getElementById("password-length-wrapper").appendChild(errorMessage);
   }
   // Check if the input is less than 1 character
   else if (input < 8) {
-    errorMessage.textContent = "Minimum length is 8 characters";
+    errorMessage.textContent = "Minimum 8 characters";
+    errorMessage.setAttribute("class", "error");
     document.getElementById("password-length-wrapper").appendChild(errorMessage);
   }
   // If the input is between 1 and 15 characters long
@@ -78,21 +81,53 @@ function createPasswords(allChars, input) {
 function passwordID(sectionId) {
 
     if (sectionId === "pwd-result-one"){
-      document.getElementById(sectionId).textContent =  allPasswords.pop();
+      document.getElementById(sectionId).textContent =  allPasswords.pop(); //Pop password out of allPasswords array and display as text within the id "pwd-result-one"
     }
 
     if (sectionId === "pwd-result-two"){
-      document.getElementById(sectionId).textContent =  allPasswords.pop();
+      document.getElementById(sectionId).textContent =  allPasswords.pop(); //Pop password out of allPasswords array and display as text within the id "pwd-result-two"
     }
   
     if (sectionId === "pwd-result-three"){
-      document.getElementById(sectionId).textContent =  allPasswords.pop();
+      document.getElementById(sectionId).textContent =  allPasswords.pop(); //Pop password out of allPasswords array and display as text within the id "pwd-result-three"
     }
   
     if (sectionId === "pwd-result-four"){
-      document.getElementById(sectionId).textContent =  allPasswords.pop();
+      document.getElementById(sectionId).textContent =  allPasswords.pop(); //Pop password out of allPasswords array and display as text within the id "pwd-result-four"
     }
  
+}
+
+////////////////////////////  COPY TO CLIPBOARD ///////////////////////////////////
+
+// Loop over NodeList of all elements with the class 'btn-copy'
+for (let i=0; i < copyButton.length; i++) {
+  copyButton[i].addEventListener('click', (event) => { // Add an event listener to each copy button
+        
+    //Check if the id of the element is "btn-copy-one"
+    if (copyButton[i].id === "btn-copy-one"){
+      copiedPassword = document.getElementById('pwd-result-one').textContent;
+    }
+
+    //Check if the id of the element is "btn-copy-two"
+    if (copyButton[i].id === "btn-copy-two"){
+      copiedPassword = document.getElementById('pwd-result-two').textContent;
+    }
+
+    //Check if the id of the element is "btn-copy-three"
+    if (copyButton[i].id === "btn-copy-three"){
+      copiedPassword = document.getElementById('pwd-result-three').textContent;
+    }
+
+    //Check if the id of the element is "btn-copy-four"
+    if (copyButton[i].id === "btn-copy-four"){
+      copiedPassword = document.getElementById('pwd-result-four').textContent;
+    }
+
+
+    // Load the copiedPassword into our clipboard
+    navigator.clipboard.writeText(copiedPassword);
+  })
 }
 
 ////////////////////////////  INITIAL INVOCATIONS ///////////////////////////////////

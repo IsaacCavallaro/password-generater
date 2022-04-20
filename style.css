@@ -13,22 +13,25 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Karla';
+  font-style: normal;
 }
 
-/* Container for all content for differing background */
+/* Container for all content to all for differing background */
 .content-container {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   background-color: #1F2937;
   width: 70%;
   height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
 }
 
 /* Wrapper for all content to center within container */
 .content-wrapper {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -39,20 +42,21 @@ html, body {
 /* =========== HEADER ============== */
 
 header {
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid #273549;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-/* Generate a Random Password text */
+/* Header "Generate a Random Password"  */
 h1 {
   font-family: 'Karla';
   font-style: normal;
   font-weight: 800;
   font-size: 35px;
   line-height: 40px;
+  margin: 0;
 }
 
 /* Color for "Random Password"  Heading */
@@ -60,32 +64,55 @@ h1 {
   color:#0369A1;
 }
 
-/* Never use an isecure password again text */
-p {
+/* "Never use an isecure password again"  */
+.sub-title {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
+  margin-top: 5px;
+  color: #D1D5DB;
 }
 
 /* =========== PASSWORD LENGTH ============== */
 
+/* "Password Length"  */
 .password-length-text {
   display: inline-block;
 }
 
-/* =========== PASSWORD GENERATE BUTTON ============== */
-
-/* generate password button */
-#generate {
-  width: 50%;
+/* User input for password length */
+#input {
+  background-color: transparent;
+  border: hidden;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
   color: #fff;
-  background-color: #0369A1;
-  font-size: .75em;
+  width: 75%;
 }
+
+/* remove outline of the text input  */
+textarea:focus, input:focus {
+  outline: none;
+}
+
+/* =========== PASSWORD GENERATE BUTTON ============== */
 
 .generate-password-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* generate password button */
+#generate {
+  margin-bottom: 0px;
+  width: 50%;
+  padding: 5px;
+  color: #fff;
+  background-color: #0369A1;
+  font-size: .7em;
+  font-weight: bold;
+  border: none;
 }
 
 button {
@@ -95,12 +122,17 @@ button {
   font-weight: 500;
 }
 
+.error {
+  margin-Top: 2px;
+  margin-Bottom: 5px;
+  font-size: 10px;
+}
+
 /* =========== FOOTER ============== */
 
 /* footer container */
 footer {
-  /* border-top: 1px solid #2F3E53; */
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -110,47 +142,150 @@ footer {
 
 /* footer content wrapper */
 .footer-wrapper {
- border: 1px solid green;
+ /* border: 1px solid green; */
  display: flex;
  flex-direction: column;
  justify-content: center;
  align-items: center;
  height: 80%;
- width: 80%;
+ width: 100%;
 }
 
-/* Top 2 buttons wrapper */
-.top-btns {
-  border: 1px solid red;
-  width: 80%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
-/* Bottom 2 buttons wrapper */
-.btm-btns {
-  border: 1px solid yellow;
-  width: 80%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.btn-and-copy-wrapper {
+  /* border: 1px solid yellow; */
+  display: flex; 
+  width: 100%;
+  margin: 5px;
 }
 
 /* Password result buttons */
 .pwd-result {
  width: 80%;
- height: 20%;
- padding: 0;
- margin: 2%;
+ height: auto;
+ padding: 0px;;
+ margin: 0px;;
  background-color: #273549;
  border: none;
  display: flex;
  font-size: 100%;
  justify-content: center;
  align-items: center;
+}
+
+/* =========== MEDIA QUERIES ============== */
+
+/************ iphone7 ***************/
+@media only screen and (min-height: 667px) {
+ 
+}
+
+/************ TABLET ***************/
+@media only screen and (min-width: 440px) {
+
+  /* Header "Generate a Random Password"  */
+  h1 {
+    font-size: 55px;
+    margin-bottom: 5px;
+    line-height: 45px;
+  }
+
+  /* "Never use an isecure password again"  */
+  .sub-title {
+    font-size: 20px;
+  }
+
+  /* "Password Length"  */
+  .password-length-text {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* User input for password length */
+  #input {
+   font-size: 30px;
+  }
+
+  #generate {
+    margin-top: 0px;
+    max-width: 100px;
+  }
+
+  .error {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+   /* password result and copy button wrapper */
+   .btn-and-copy-wrapper {
+    width: 50%;
+    margin: 5px;
+  }
+ 
+}
+
+/************ DESKTOP ***************/
+@media only screen and (min-width: 1210px) {
+
+  /* Header "Generate a Random Password"  */
+  h1 {
+    font-size: 70px;
+    line-height: 70px;
+    margin-bottom: 5px;
+  }
+
+  .rdm-pwd-text {
+    display: block;
+  }
+
+  /* "Never use an isecure password again"  */
+  .sub-title {
+    font-size: 30px;
+  }
+
+  /* "Password Length"  */
+  .password-length-text {
+    display: block;
+    font-size: 30px;
+  }
+
+  /* User input for password length */
+  #input {
+    font-size: 50px;
+  }
+
+  .generate-password-wrapper {
+    width: 100%;
+  }
+
+  #generate {
+    font-size: 12px;
+    padding: 20px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* Password result buttons */
+  .pwd-result {
+  font-size: 20px;
+  height: 100%;
+  margin: 0px;
+  }
+
+  /* password result and copy button wrapper */
+  .btn-and-copy-wrapper {
+    width: 50%;
+    margin: 20px;
+  }
+  
+  .error {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+ .content-container {
+   max-width: 800px;
+ }
+
 }
