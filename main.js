@@ -43,17 +43,13 @@ function generateBtn() {
   // Check if the input is bigger than 15 characters
   if (input > 15) {
     errorMessage.textContent = "Maximum 15 characters";
-    errorMessage.style.marginTop = "2px"
-    errorMessage.style.marginBottom = "0px";
-    errorMessage.style.fontSize = "10px";
+    errorMessage.setAttribute("class", "error");
     document.getElementById("password-length-wrapper").appendChild(errorMessage);
   }
   // Check if the input is less than 1 character
   else if (input < 8) {
     errorMessage.textContent = "Minimum 8 characters";
-    errorMessage.style.marginTop = "2px"
-    errorMessage.style.marginBottom = "0px";
-    errorMessage.style.fontSize = "10px";
+    errorMessage.setAttribute("class", "error");
     document.getElementById("password-length-wrapper").appendChild(errorMessage);
   }
   // If the input is between 1 and 15 characters long
